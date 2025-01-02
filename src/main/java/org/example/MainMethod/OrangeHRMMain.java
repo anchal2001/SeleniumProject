@@ -1,5 +1,6 @@
-package org.example;
+package org.example.MainMethod;
 
+import org.example.XpathLocator.OrangeHRMLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class OrangeHRMMain {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver","driver//chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -16,13 +17,13 @@ public class Main {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         System.out.println("Browser title is : " + driver.getTitle());
 
-        WebElement usernameField = driver.findElement(By.xpath("//input[@placeholder=\"Username\"]"));
+        WebElement usernameField = driver.findElement(By.xpath(OrangeHRMLocators.USERNAME_FIELD));
         usernameField.click();
         usernameField.sendKeys("Admin");
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 
-        WebElement passwordField = driver.findElement(By.xpath("//input[@placeholder=\"Password\"]"));
+        WebElement passwordField = driver.findElement(By.xpath(OrangeHRMLocators.PASSWORD_FIELD));
         passwordField.click();
         passwordField.sendKeys("admin123");
 
@@ -31,7 +32,7 @@ public class Main {
 
         System.out.println("Username and Password for the login are : " + username + " " + password);
 
-        WebElement loginbtn = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
+        WebElement loginbtn = driver.findElement(By.xpath(OrangeHRMLocators.LOGIN_BUTTON));
         loginbtn.click();
 
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
