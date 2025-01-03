@@ -39,7 +39,7 @@ public class OrangeHRMMain {
         actions.clickAdminTab();
 
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+
 
 
         driver.quit();
