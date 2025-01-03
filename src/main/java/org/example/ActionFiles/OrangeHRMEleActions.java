@@ -50,5 +50,10 @@ public class OrangeHRMEleActions {
         return passwordField.getAttribute("value");
     }
 
+    public void clickAdminTab()
+    {
+        WebElement adminTab = driver.findElement(By.xpath(OrangeHRMLocators.ADMIN_TAB));
+        adminTab.click();
+    }
 }
 
