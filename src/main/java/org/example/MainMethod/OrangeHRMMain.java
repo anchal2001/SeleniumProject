@@ -50,6 +50,7 @@ public class OrangeHRMMain {
 
         System.out.println("Screenshot saved at: " + destFile.getAbsolutePath());
 
+        Thread.sleep(3000);
 
 
         driver.quit();
