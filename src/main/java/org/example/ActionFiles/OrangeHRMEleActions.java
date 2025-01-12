@@ -4,6 +4,7 @@ import org.example.XpathLocator.OrangeHRMLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class OrangeHRMEleActions {
 
@@ -12,7 +13,7 @@ public class OrangeHRMEleActions {
     public OrangeHRMEleActions(WebDriver driver)
     {
         this.driver = driver;
-        
+
     }
 
     public void OpenApplication(String url)
@@ -61,6 +62,17 @@ public class OrangeHRMEleActions {
         WebElement usernameField_admin = driver.findElement(By.xpath(OrangeHRMLocators.USERNAME_ADMIN_FIELD));
         usernameField_admin.click();
         usernameField_admin.sendKeys(username_admin_field);
+    }
+
+    public void user_role_dropdown()
+    {
+        WebElement user_role_tab = driver.findElement(By.xpath(OrangeHRMLocators.USER_ROLE_DROPDOWN));
+        user_role_tab.click();
+
+        WebElement adminOption = driver.findElement(By.xpath(OrangeHRMLocators.ROLE_DROPDOWN));
+        adminOption.click();
+
+
     }
 }
 

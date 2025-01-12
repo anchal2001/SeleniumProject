@@ -44,6 +44,8 @@ public class OrangeHRMMain {
 
         actions.username_admin("test@123");
 
+        actions.user_role_dropdown();
+
         File srcfile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         File destFile = new File("screenshot.png");
         FileUtils.copyFile(srcfile, destFile);
