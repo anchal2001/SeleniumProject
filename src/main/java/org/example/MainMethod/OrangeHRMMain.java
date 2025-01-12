@@ -44,12 +44,12 @@ public class OrangeHRMMain {
 
         actions.username_admin("test@123");
 
-//        File srcfile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//        File destFile = new File("screenshot.png");
-//        FileUtils.copyFile(srcfile, destFile);
-//
-//        System.out.println("Screenshot saved at: " + destFile.getAbsolutePath());
-//
+        File srcfile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File destFile = new File("screenshot.png");
+        FileUtils.copyFile(srcfile, destFile);
+
+        System.out.println("Screenshot saved at: " + destFile.getAbsolutePath());
+
 
 
         driver.quit();
