@@ -1,16 +1,18 @@
 package org.example.MainMethod;
 
+import org.apache.commons.io.FileUtils;
 import org.example.ActionFiles.OrangeHRMEleActions;
-import org.example.XpathLocator.OrangeHRMLocators;
-import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class OrangeHRMMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         System.setProperty("webdriver.chrome.driver","driver//chromedriver.exe");
 
@@ -38,7 +40,15 @@ public class OrangeHRMMain {
 
         actions.clickAdminTab();
 
-        driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+        Thread.sleep(3000);
+
+        actions.username_admin("test@123");
+
+        File srcfile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File destFile = new File("screenshot.png");
+        FileUtils.copyFile(srcfile, destFile);
+
+        System.out.println("Screenshot saved at: " + destFile.getAbsolutePath());
 
 
 

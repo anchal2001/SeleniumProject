@@ -55,5 +55,12 @@ public class OrangeHRMEleActions {
         WebElement adminTab = driver.findElement(By.xpath(OrangeHRMLocators.ADMIN_TAB));
         adminTab.click();
     }
+
+    public void username_admin(String username_admin_field)
+    {
+        WebElement usernameField_admin = driver.findElement(By.xpath(OrangeHRMLocators.USERNAME_ADMIN_FIELD));
+        usernameField_admin.click();
+        usernameField_admin.sendKeys(username_admin_field);
+    }
 }
 
